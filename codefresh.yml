@@ -27,11 +27,13 @@ steps:
           GITHUB_ACCOUNT: $GITHUB_ACCOUNT
           GITHUB_PASSWORD: $GITHUB_PASSWORD
           URL: $URL
+          SUITE: $SUITE
         command: sh -c "/protractor/run-tests.sh"
     composition_variables:
       - GITHUB_ACCOUNT=${{GITHUB_ACCOUNT}}
       - GITHUB_PASSWORD=${{GITHUB_PASSWORD}}
       - URL='https://codefresh.io'
+      - SUITE='login'
     on_success:
       metadata:
         set:
