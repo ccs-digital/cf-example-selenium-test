@@ -31,19 +31,14 @@ unit_test:
     composition_candidates:
       test:
         image: ${{build_image}}
-        depends_on:
-          - selenium
         volumes:
           - /dev/shm:/dev/shm
         environment:
-          GITHUB_ACCOUNT: $GITHUB_ACCOUNT
-          GITHUB_PASSWORD: $GITHUB_PASSWORD
-          URL: $URL
-        command: sh -c "/protractor/run-tests.sh"
-    composition_variables:
-      - GITHUB_ACCOUNT=${{GITHUB_ACCOUNT}}
-      - GITHUB_PASSWORD=${{GITHUB_PASSWORD}}
-      - URL='https://codefresh.io'
+          GITHUB_ACCOUNT: ${{GITHUB_ACCOUNT}}
+          GITHUB_PASSWORD: ${{GITHUB_PASSWORD}}
+          URL: 'https://codefresh.io'
+          SUITE: 'login'
+        command: bash -c '/protractor/run-tests.sh'
     on_success:
       metadata:
         set:

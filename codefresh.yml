@@ -19,8 +19,6 @@ steps:
     composition_candidates:
       test:
         image: ${{build_image}}
-#        depends_on:
-#          - selenium
         volumes:
           - /dev/shm:/dev/shm
         environment:
