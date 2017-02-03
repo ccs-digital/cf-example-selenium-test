@@ -8,12 +8,12 @@ This project uses `JavaScript, Selenium, Protractor` to build an application whi
 
 ## Looking around
 
-In the root of this repository you'll find a file named `codefresh.yml`, this is our https://docs.codefresh.io/docs/what-is-the-codefresh-yaml[build descriptor] and it describes the different steps that comprise our process.
+In the root of this repository you'll find a file named `codefresh.yml`, this is our [build descriptor](https://docs.codefresh.io/docs/what-is-the-codefresh-yaml) and it describes the different steps that comprise our process.
 Let's quickly review the contents of this file:
 
 ### Compiling and testing
 
-To compile and test our code we use Codefresh's https://docs.codefresh.io/docs/steps#section-freestyle[Freestyle step].
+To compile and test our code we use Codefresh's [Freestyle step](https://docs.codefresh.io/docs/steps#section-freestyle).
 
 The Freestyle step basically let's you say "Hey, Codefresh! Here's a Docker image. Create a new container and run these commands for me, will ya?"
 
@@ -57,7 +57,7 @@ The `commands` field is how you specify all the commands that you'd like to exec
 
 ### Building
 
-To bake our application into a Docker image we use Codefresh's https://docs.codefresh.io/docs/steps#section-build[Build step].
+To bake our application into a Docker image we use Codefresh's [Build step](https://docs.codefresh.io/docs/steps#section-build).
 
 The Build is a simplified abstraction over the Docker build command.
 
