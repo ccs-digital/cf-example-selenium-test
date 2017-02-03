@@ -1,0 +1,16 @@
+version: '2'
+services:
+  test:
+    image: codefreshio/selenium-test
+    depends_on:
+      - selenium
+    volumes:
+      - /dev/shm:/dev/shm
+    environment:
+      GITHUB_ACCOUNT: $GITHUB_ACCOUNT
+      GITHUB_PASSWORD: $GITHUB_PASSWORD
+      URL: $URL
+  selenium:
+    image: selenium/standalone-chrome:2.46.0
+    ports:
+      - 4444:4444

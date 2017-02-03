@@ -1,0 +1,44 @@
+version: '2'
+steps:
+  build_image:
+    title: Building Image
+    type: build
+    dockerfile: Dockerfile
+    image_name: codefresh/selenium-test
+
+  unit_test:
+    title: Unit Tests
+    type: composition
+    composition:
+      version: '2'
+      services:
+        selenium:
+          image: selenium/standalone-chrome:2.46.0
+          ports:
+            - 4444:4444
+    composition_candidates:
+      test:
+        image: ${{build_image}}
+        depends_on:
+          - selenium
+        volumes:
+          - /dev/shm:/dev/shm
+        environment:
+          GITHUB_ACCOUNT: $GITHUB_ACCOUNT
+          GITHUB_PASSWORD: $GITHUB_PASSWORD
+          URL: $URL
+        command: sh -c "/protractor/run-tests.sh"
+    composition_variables:
+      - GITHUB_ACCOUNT=${{GITHUB_ACCOUNT}}
+      - GITHUB_PASSWORD=${{GITHUB_PASSWORD}}
+      - URL='https://codefresh.io'
+    on_success:
+      metadata:
+        set:
+          - ${{build_image.imageId}}:
+            - CF_QUALITY: true
+    on_fail:
+      metadata:
+        set:
+          - ${{build_image.imageId}}:
+            - CF_QUALITY: false
