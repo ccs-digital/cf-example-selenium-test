@@ -6,7 +6,7 @@ export DISPLAY=:0
 Xvfb :0 -screen 0 1024x768x24 &
 
 echo "Running Protractor tests"
-protractor $TESTCONF --suite $SUITE
+protractor /protractor/conf.js --suite $SUITE
 a=$?
 echo "Protractor tests have done"
 exit $a
