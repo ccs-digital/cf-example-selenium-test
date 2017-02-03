@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:6.9
 
 # Latest Googgle Chrome installation package
 RUN apt-get update && apt-get install -y wget
@@ -24,5 +24,8 @@ RUN npm install
 
 ENV HOME /protractor/
 ENV TESTCONF /protractor/conf.js
+
+RUN node --version
+RUN npm --version
 
 RUN chmod -R +x .
