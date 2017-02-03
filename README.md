@@ -80,10 +80,10 @@ Use the `image_name` field to declare the name of the resulting image (don't for
 
 To use this example:
 
-. Fork this repository to your own [INSERT_SCM_SYSTEM (git, bitbucket)] account.
-. Log in to Codefresh using your [INSERT_SCM_SYSTEM (git, bitbucket)] account.
-. Click the `Add Service` button.
-. Select the forked repository.
-. Select the `I have a Codefresh.yml file` option.
-. Complete the wizard.
-. Rejoice!
+* Fork this repository to your own [INSERT_SCM_SYSTEM (git, bitbucket)] account.
+* Log in to Codefresh using your [INSERT_SCM_SYSTEM (git, bitbucket)] account.
+* Click the `Add Service` button.
+* Select the forked repository.
+* Select the `I have a Codefresh.yml file` option.
+* Complete the wizard.
+* Rejoice!
