@@ -24,8 +24,8 @@ steps:
         volumes:
           - /dev/shm:/dev/shm
         environment:
-          GITHUB_ACCOUNT: $GITHUB_ACCOUNT
-          GITHUB_PASSWORD: $GITHUB_PASSWORD
+          GITHUB_ACCOUNT: ${{GITHUB_ACCOUNT}}
+          GITHUB_PASSWORD: ${{GITHUB_PASSWORD}}
           URL: 'https://codefresh.io'
           SUITE: 'login'
         command: bash -c '/protractor/run-tests.sh'
