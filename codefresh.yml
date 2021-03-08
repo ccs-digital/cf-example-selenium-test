@@ -1,5 +1,14 @@
 version: '1.0'
 steps:
+  clone:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "https://github.com/ccs-digital/cf-example-selenium-test.git"
+    # CF_BRANCH value is auto set when pipeline is triggered
+    # Learn more at codefresh.io/docs/docs/codefresh-yaml/variables/
+    revision: "master"
+    git: "github-public"
+    stage: "clone"
   build_image:
     title: Building Image
     type: build
