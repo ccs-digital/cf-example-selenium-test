@@ -5,6 +5,7 @@ steps:
     type: build
     dockerfile: Dockerfile
     image_name: codefresh/selenium-test
+    tag: 1.0.0
 
   unit_test:
     title: Unit Tests
