@@ -1,5 +1,6 @@
 FROM node:6.9
-
+ENV http_proxy http://3.28.29.241:88
+ENV https_proxy http://3.28.29.241:88
 # Latest Googgle Chrome installation package
 RUN apt-get update && apt-get install -y wget
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
