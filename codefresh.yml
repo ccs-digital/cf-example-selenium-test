@@ -8,7 +8,7 @@ steps:
     # Learn more at codefresh.io/docs/docs/codefresh-yaml/variables/
     revision: "master"
     git: "github-public"
-    stage: "clone"
+    
   build_image:
     title: Building Image
     type: build
