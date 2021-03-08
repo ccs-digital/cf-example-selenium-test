@@ -3,6 +3,7 @@ steps:
   build_image:
     title: Building Image
     type: build
+    working_directory: "${{clone}}"
     dockerfile: Dockerfile
     image_name: codefresh/selenium-test
     tag: 1.0.0
